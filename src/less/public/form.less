@@ -1,0 +1,37 @@
+.c_form{
+  .c_form_group{
+      position: relative;
+      margin-bottom: 28px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .c_form_input{
+      padding: 15px 17px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      -webkit-appearance: none;
+      background-color: transparent;
+      background: @input-bgColor;
+      &.c_form_input_sm{
+        width: 55%;
+      }
+    }
+    .c_form_input_after{
+      position: absolute;
+      width: 40%;
+      top:0;
+      bottom: 0;
+      right: 0;
+      .c-btn{
+        box-shadow: none;
+        border-radius: 5px;
+        vertical-align: middle;
+        line-height: 1.3;
+        height: 100%;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,71 @@
+@@include('header.html', {
+"title"      : "壹平方米",
+"vendor_css" : "./css/vendor.css",
+"app_css"    : "./css/personData.css"
+})
+
+<!--content-->
+<div class="page-group">
+  <div class="page form-page page-current">
+    <div class="tree">
+      <div class="tree_item text-center active">
+        <div class="tree_item_icon"></div>
+        <div class="tree_item_txt">填写身份信息</div>
+      </div>
+      <div class="tree_item text-center active">
+        <div class="tree_item_icon"></div>
+        <div class="tree_item_txt">补充用户信息</div>
+      </div>
+      <div class="tree_item text-center">
+        <div class="tree_item_icon">3</div>
+        <div class="tree_item_txt">完成注册</div>
+      </div>
+    </div>
+    <div class="c_form">
+      <div class="c_form_group">
+        <input class="c_form_input" placeholder="登录名" type="text">
+      </div>
+      <div class="c_form_group">
+        <input class="c_form_input" placeholder="密码" type="text">
+      </div>
+      <div class="c_form_group">
+        <input class="c_form_input" placeholder="确认密码" type="text">
+      </div>
+      <div class="c_form_group">
+        <input class="c_form_input" placeholder="电子邮箱" type="text">
+      </div>
+      <div class="c_form_group">
+        <input class="c_form_input" placeholder="手机号码" type="text">
+      </div>
+      <div class="c_form_group">
+        <input class="c_form_input c_form_input_sm" placeholder="动态码" type="text">
+        <div class="c_form_input_after">
+          <a href="#" class="c-btn">获取动态码</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit_btn">
+      <a href="./signOver.html" class="c-btn" id="showIOSDialog2">提交</a>
+    </div>
+    <div class="dialogs">
+      <div class="js_dialog" id="iosDialog2" style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+          <div class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></div>
+          <div class="weui-dialog__bd">弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内</div>
+          <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<!--content-->
+
+@@include('footer.html', {
+"vendor_js" : "./js/vendor.js",
+"app_js"    : "./js/personData.js"
+})

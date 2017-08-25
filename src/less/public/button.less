@@ -1,0 +1,39 @@
+.c-btn{
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  padding: 14px 0;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 100px;
+  background-color: @color-primary;
+  box-shadow: 0 14px 40px 0 rgba(0,171,251,0.67);
+  transition: all .2s linear;
+  outline: none;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  border: none;
+  user-select: none;
+  -webkit-tap-highlight-color:transparent;
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background: #C9CACA;
+      color: #fff;
+      box-shadow: none;
+      transform: scale(1);
+    }
+  }
+  &:active{
+    color: #fff;
+    transform: scale(.95) ;
+  }
+}

@@ -1,0 +1,44 @@
+body{
+  margin: 0;
+  min-height: 100%;
+}
+.page,.page-group{
+  background-color: #fff;
+}
+.page-group.page-current, .page.page-current{
+  overflow-y: auto;
+}
+.page{
+  &.form-page{
+   padding:0 18px 30px 18px;
+    &.padding{
+      padding:40px 18px 30px 18px;
+    }
+  }
+}
+a{
+  font-size: 16px;
+  color: @color-primary;
+}
+*{
+  font-size: 16px;
+}
+.black_font{
+  color: @color-black;
+}
+.footer_bar{
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+@color-primary:         #00ABFB;
+@color-black:           #6B6B6B;
+@input-bgColor:         #EDF2F5;

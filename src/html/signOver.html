@@ -1,0 +1,37 @@
+@@include('header.html', {
+"title"      : "壹平方米",
+"vendor_css" : "./css/vendor.css",
+"app_css"    : "./css/signOver.css"
+})
+
+<!--content-->
+<div class="page-group">
+  <div class="page form-page page-current">
+    <div class="tree">
+      <div class="tree_item text-center active">
+        <div class="tree_item_icon"></div>
+        <div class="tree_item_txt">填写身份信息</div>
+      </div>
+      <div class="tree_item text-center active">
+        <div class="tree_item_icon"></div>
+        <div class="tree_item_txt">补充用户信息</div>
+      </div>
+      <div class="tree_item text-center active">
+        <div class="tree_item_icon"></div>
+        <div class="tree_item_txt">完成注册</div>
+      </div>
+    </div>
+    <div class="over_img"></div>
+    <div class="over_txt text-center">您在个人征信信息平台已注册成功</div>
+    <div class="toLogin_btn">
+      <a href="./login.html" class="c-btn" id="showIOSDialog2">立即登录</a>
+    </div>
+  </div>
+</div>
+</body>
+<!--content-->
+
+@@include('footer.html', {
+"vendor_js" : "./js/vendor.js",
+"app_js"    : "./js/signOver.js"
+})
