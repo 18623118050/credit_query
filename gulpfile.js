@@ -61,8 +61,7 @@ gulp.task('jsVendor', () => {
           './src/js/vendor/sm.min.js',
           './src/js/vendor/sm-extend.min.js',
           './src/js/vendor/sm-city-picker.min.js',
-          './src/js/vendor/iscroll-lite.js',
-          './src/js/vendor/layer.js'
+          './src/js/vendor/iscroll-lite.js'
         ])
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('./dist/js/'))
@@ -78,7 +77,7 @@ gulp.task('css', () => {
           './src/css/ant-iconfont.css',
           './src/css/iconfont.css',
           './src/css/border.css',
-          './src/css/layer.css',
+          './src/css/weui.min.css',
           './src/css/magic-check.min.css'
         ])
         .pipe(concat('vendor.css'))

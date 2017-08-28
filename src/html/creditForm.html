@@ -1,0 +1,51 @@
+@@include('header.html', {
+"title"      : "壹平方米",
+"vendor_css" : "./css/vendor.css",
+"app_css"    : "./css/creditForm.css"
+})
+
+<!--content-->
+<div class="page-group">
+  <div class="page form-page page-current">
+    <div class="title_space">
+      为确保是您本人查询个人信息，需要您真实准确的回答以下问题。其准确性会影响到是否成功获取信用记录。
+    </div>
+    <div class="creditForm_time">距离身份验证结束时间: 9分29秒</div>
+    <div class="creditForm">
+      <form action="">
+        <div class="issue_group">
+          <div class="issue_title">
+            1、您在2016年09月办理的贷款额度是多少？
+          </div>
+          <div class="issue_content">
+              <div class="issue_item"><input name="limit" id="1" class="magic-radio" type="radio"><label for="1">1. 4000-5500</label></div>
+              <div class="issue_item"><input name="limit" id="2" class="magic-radio" type="radio"><label for="2">2. 5500-6000</label></div>
+              <div class="issue_item"><input name="limit" id="3" class="magic-radio" type="radio"><label for="3">3. 6000-6500</label></div>
+              <div class="issue_item"><input name="limit" id="4" class="magic-radio" type="radio"><label for="4">4. 6500-7000</label></div>
+          </div>
+        </div>
+        <div class="issue_group">
+          <div class="issue_title">
+            2、您在2016年09月在哪家办理过贷款？
+          </div>
+          <div class="issue_content">
+            <div class="issue_item"><input name="who" id="5" class="magic-radio" type="radio"><label for="5">1. 4000-5500</label></div>
+            <div class="issue_item"><input name="who" id="6" class="magic-radio" type="radio"><label for="6">2. 5500-6000</label></div>
+            <div class="issue_item"><input name="who" id="7" class="magic-radio" type="radio"><label for="7">3. 6000-6500</label></div>
+            <div class="issue_item"><input name="who" id="8" class="magic-radio" type="radio"><label for="8">4. 6500-7000</label></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="submit_btn">
+      <a class="c-btn" href="./creditGet.html">提交</a>
+    </div>
+  </div>
+</div>
+</body>
+<!--content-->
+
+@@include('footer.html', {
+"vendor_js" : "./js/vendor.js",
+"app_js"    : "./js/creditForm.js"
+})

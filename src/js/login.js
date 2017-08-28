@@ -1,12 +1,16 @@
 $(function () {
 
-  // 点击找回密码
-  $('#getBack_btn').on('click',()=>{
-    layer.open({
-      content: '移动版和PC版不能同时存在同一页面'
-      ,btn: '我知道了'
-    });
-  })
+  let $getPWd       = $('#getPwd'),
+      $getPwdDialog = $('#getPwdDialog');
+
+
+  $('.weui-dialog__btn').on('click', function(){
+    $(this).parents('.js_dialog').hide();
+  });
+
+  $getPWd.on('click', function(){
+    $getPwdDialog.show();
+  });
 
 })
 

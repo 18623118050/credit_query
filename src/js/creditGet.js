@@ -8,7 +8,7 @@ $(function () {
 
     setTimeout(() => {
 
-      window.location.href = './creditGet.html'
+      window.location.href = './submitSucc.html'
     }, 1000)
   })
 })

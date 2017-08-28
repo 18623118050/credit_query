@@ -31,7 +31,7 @@
 }
 .magic-checkbox+label:before, .magic-radio+label:before {
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: 0;
   display: inline-block;
   width: 16px;
@@ -68,8 +68,8 @@
   border-radius: 50%
 }
 .magic-radio+label:after {
-  top: 9px;
-  left: 6px;
+  top: 10px;
+  left: 5px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -88,7 +88,7 @@
   border-radius: 3px
 }
 .magic-checkbox+label:after {
-  top: 5px;
+  top: 7px;
   left: 6px;
   box-sizing: border-box;
   width: 6px;
