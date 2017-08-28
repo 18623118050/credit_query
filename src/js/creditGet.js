@@ -1,3 +1,5 @@
+import './public /toastr';
+
 $(function () {
 
   $('#getCredit').on('click', function (e) {

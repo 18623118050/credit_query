@@ -1,3 +1,5 @@
+import './public /toastr';
+
 $(function () {
 
   let $getPWd       = $('#getPwd'),
