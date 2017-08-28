@@ -1,4 +1,4 @@
-import './public /toastr';
+import './public/toastr';
 
 $(function () {
 

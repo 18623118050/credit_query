@@ -1,3 +1,5 @@
+// 配置toastr
+
 toastr.options = {
   "closeButton": false,//是否配置关闭按钮
   "debug": false,//是否开启debug模式
