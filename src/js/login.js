@@ -16,7 +16,8 @@ $(function () {
 
   $('#xx').on('click',function (e) {
     e.preventDefault();
-    toastr["error"]('你好')
+
+    toastr["error"]('登录名和密码不能为空！')
   })
 })
 
