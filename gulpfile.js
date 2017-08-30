@@ -57,11 +57,8 @@ gulp.task('js', () => {
 gulp.task('jsVendor', () => {
   return (
     gulp.src([
-          './src/js/vendor/zepto.js',
-          './src/js/vendor/sm.min.js',
-          './src/js/vendor/sm-extend.min.js',
-          './src/js/vendor/sm-city-picker.min.js',
-          './src/js/vendor/iscroll-lite.js',
+          './src/js/vendor/jquery-1.9.1.min.js',
+
           './src/js/vendor/toastr.min.js',
         ])
         .pipe(concat('vendor.js'))
@@ -74,10 +71,6 @@ gulp.task('css', () => {
   return (
     gulp.src([
           './src/css/sm.min.css',
-          './src/css/sm-extend.min.css',
-          './src/css/ant-iconfont.css',
-          './src/css/iconfont.css',
-          './src/css/border.css',
           './src/css/weui.min.css',
           './src/css/magic-check.min.css',
           './src/css/toastr.min.css'

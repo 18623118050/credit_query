@@ -14,5 +14,9 @@ $(function () {
     $getPwdDialog.show();
   });
 
+  $('#xx').on('click',function (e) {
+    e.preventDefault();
+    toastr["error"]('你好')
+  })
 })
 
