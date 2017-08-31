@@ -1,23 +1,90 @@
-import './public/toastr';
+import './public/index'
 
-$(function () {
+import {
+  userName    as validate_loginName,
+  password    as validate_pwd
+} from './public/validate'
 
-  let $getPWd       = $('#getPwd'),
-      $getPwdDialog = $('#getPwdDialog');
 
-
-  $('.weui-dialog__btn').on('click', function(){
-    $(this).parents('.js_dialog').hide();
-  });
-
-  $getPWd.on('click', function(){
-    $getPwdDialog.show();
-  });
-
-  $('#xx').on('click',function (e) {
-    e.preventDefault();
-
-    toastr["error"]('登录名和密码不能为空！')
-  })
+let app = new Vue({
+  el: '#login-form',
+  data: () => { // 设置成函数才可以调用$options.data()方法来清空数据
+    return {
+      loginName: '',
+      pwd: '',
+      identifyCode: ''
+    }
+  },
+  mounted: () => { // 生命周期
+    vue_mounted_valid()
+  }
 })
+function vue_mounted_valid () {
+  let form_valid,
+    form = $('#login-form')
 
+  $.validator.setDefaults({ // 只能放在validate规则配置之前
+
+    // 提交事件
+    submitHandler: () => {
+      console.log('submit!')
+
+      let loading_modal = layer.msg('提交中...', {
+        icon: 16,
+        time: 0
+      })
+
+      $.ajax({
+        url: base + addCustomer,
+        type: 'POST',
+        data: app.$data,
+      })
+        .done(function (res) {
+          console.log(res)
+
+          if (typeof res === 'object') { // 成功
+
+            layer.msg('添加渠道商成功', {
+              icon: 6
+            })
+
+            setTimeout(() => {
+              window.location = './index.html'
+            }, 1000)
+          }
+
+          console.log("success");
+        })
+        .fail(function (res) {
+          console.log(res)
+
+          layer.msg('添加渠道商失败', {
+            icon: 5
+          })
+
+          console.log("error");
+        })
+        .always(function (res) {
+
+          catchError(res)
+          console.log("complete")
+          // 重置表单
+          $.extend(app.$data, app.$options.data())
+          layer.close(loading_modal)
+        })
+
+    }
+  })
+
+  // 验证
+  form_valid = form.validate({
+    rules: {
+      loginName: validate_loginName,
+      pwd: validate_pwd,
+      identifyCode: {
+        required: true
+      }
+    }
+  })
+
+}

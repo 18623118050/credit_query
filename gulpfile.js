@@ -58,7 +58,9 @@ gulp.task('jsVendor', () => {
   return (
     gulp.src([
           './src/js/vendor/jquery-1.9.1.min.js',
-
+          './src/js/vendor/vue.min.js',
+          './src/js/vendor/jquery.validate.min.js',
+          './src/js/vendor/messages_zh.min.js',
           './src/js/vendor/toastr.min.js',
         ])
         .pipe(concat('vendor.js'))
@@ -73,7 +75,8 @@ gulp.task('css', () => {
           './src/css/sm.min.css',
           './src/css/weui.min.css',
           './src/css/magic-check.min.css',
-          './src/css/toastr.min.css'
+          './src/css/toastr.min.css',
+          './src/css/iconfont.css'
         ])
         .pipe(concat('vendor.css'))
         .pipe(gulp.dest('./dist/css/'))
