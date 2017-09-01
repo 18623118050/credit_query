@@ -21,7 +21,7 @@ $.validator.addMethod("idcard", function(value, element) {
 // 密码
 $.validator.addMethod("pwd", function(value, element) {
   return this.optional(element) || (/^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-zA-Z]|[0-9]){1,}$/.test(value))
-}, "必须为数字、符号、字母任意两种以上字符组成")
+}, "必须为数字、字母两种字符组成")
 
 
 const userName = { // 用户名验证规则
@@ -30,24 +30,6 @@ const userName = { // 用户名验证规则
   minlength: 6,
   maxlength: 16,
   // checkUserExist: true // 用户名重复校验
-}
-
-const companyName = { // 企业名称验证规则
-  required: true,
-  minlength: 5,
-  maxlength: 20
-}
-
-const companyCode = { // 企业简码验证规则
-  required: true,
-  minlength: 2,
-  maxlength: 20
-}
-
-const companyAlias = { // 企业简称验证规则
-  required: true,
-  minlength: 3,
-  maxlength: 10
 }
 
 const contacts = { // 联系人
@@ -76,13 +58,6 @@ const remark = { // 备注
   maxlength: 400
 }
 
-/* 楼盘相关 */
-const estateName = {
-  required: true,
-  minlength: 5,
-  maxlength: 20
-}
-
 const address = {
   required: true,
   minlength: 5,
@@ -107,10 +82,10 @@ const password = {
   minlength : 6,
   maxlength : 20
 }
-const password = {
+
+const identifyCode = {
   required  : true,
-  user       : true,
-  minlength : 6,
+  user      : true,
   maxlength : 6
 }
 
@@ -158,17 +133,12 @@ const price = {
 
 export {
   userName,
-  companyName,
-  companyCode,
-  companyAlias,
   contacts,
   mobile,
   businessLicense,
   settlement,
   remark,
   role,
-  /* 楼盘相关 */
-  estateName,
   address,
   realName,
   servicePhone,
@@ -178,5 +148,6 @@ export {
   area,
   structure,
   roomNo,
+  identifyCode,
   price
 }

@@ -1,8 +1,9 @@
 import './public/index'
 
 import {
-  userName    as validate_loginName,
-  password    as validate_pwd
+  userName        as validate_loginName,
+  password        as validate_pwd,
+  identifyCode    as validate_identifyCode
 } from './public/validate'
 
 
@@ -28,50 +29,50 @@ function vue_mounted_valid () {
     // 提交事件
     submitHandler: () => {
       console.log('submit!')
+      window.location.href = './creditWithout.html'
+      /*      let loading_modal = layer.msg('提交中...', {
+       icon: 16,
+       time: 0
+       })*/
 
-      let loading_modal = layer.msg('提交中...', {
-        icon: 16,
-        time: 0
-      })
+      /*     $.ajax({
+       url: base + addCustomer,
+       type: 'POST',
+       data: app.$data,
+       })
+       .done(function (res) {
+       console.log(res)
 
-      $.ajax({
-        url: base + addCustomer,
-        type: 'POST',
-        data: app.$data,
-      })
-        .done(function (res) {
-          console.log(res)
+       if (typeof res === 'object') { // 成功
 
-          if (typeof res === 'object') { // 成功
+       layer.msg('添加渠道商成功', {
+       icon: 6
+       })
 
-            layer.msg('添加渠道商成功', {
-              icon: 6
-            })
+       setTimeout(() => {
+       window.location = './index.html'
+       }, 1000)
+       }
 
-            setTimeout(() => {
-              window.location = './index.html'
-            }, 1000)
-          }
+       console.log("success");
+       })
+       .fail(function (res) {
+       console.log(res)
 
-          console.log("success");
-        })
-        .fail(function (res) {
-          console.log(res)
+       layer.msg('添加渠道商失败', {
+       icon: 5
+       })
 
-          layer.msg('添加渠道商失败', {
-            icon: 5
-          })
+       console.log("error");
+       })
+       .always(function (res) {
 
-          console.log("error");
-        })
-        .always(function (res) {
-
-          catchError(res)
-          console.log("complete")
-          // 重置表单
-          $.extend(app.$data, app.$options.data())
-          layer.close(loading_modal)
-        })
+       catchError(res)
+       console.log("complete")
+       // 重置表单
+       $.extend(app.$data, app.$options.data())
+       layer.close(loading_modal)
+       })*/
 
     }
   })
@@ -81,10 +82,30 @@ function vue_mounted_valid () {
     rules: {
       loginName: validate_loginName,
       pwd: validate_pwd,
-      identifyCode: {
-        required: true
-      }
+      identifyCode: validate_identifyCode
     }
   })
 
 }
+
+function findPwd() {
+  let $getPwd       = $('#getPwd'),
+      $getPwdDialog = $('#getPwdDialog'),
+      $dialogBtn    = $('.weui-dialog__btn')
+
+  $getPwd.on('click',(e) => {
+    e.preventDefault();
+    $getPwdDialog.fadeIn(200)
+  })
+
+  $dialogBtn.on('click',(e) => {
+    e.preventDefault();
+    let $el = $(e.target)
+    
+    $el.parents('.js_dialog').fadeOut(200)
+  })
+}
+
+findPwd();
+
+
