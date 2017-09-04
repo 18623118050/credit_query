@@ -6,7 +6,6 @@ import {
   identifyCode    as validate_identifyCode
 } from './public/validate'
 
-
 let app = new Vue({
   el: '#login-form',
   data: () => { // 设置成函数才可以调用$options.data()方法来清空数据
