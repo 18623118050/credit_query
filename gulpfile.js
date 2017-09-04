@@ -62,6 +62,7 @@ gulp.task('jsVendor', () => {
           './src/js/vendor/jquery.validate.min.js',
           './src/js/vendor/messages_zh.min.js',
           './src/js/vendor/toastr.min.js',
+          './src/js/vendor/active.js',
         ])
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('./dist/js/'))
