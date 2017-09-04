@@ -23,6 +23,11 @@ $.validator.addMethod("pwd", function(value, element) {
   return this.optional(element) || (/^(?![0-9]+$)(?![a-zA-Z]+$)(?!([^(0-9a-zA-Z)]|[\(\)])+$)([^(0-9a-zA-Z)]|[\(\)]|[a-zA-Z]|[0-9]){1,}$/.test(value))
 }, "必须为数字、字母两种字符组成")
 
+const idCard = {
+  required: true,
+  idcard : true,
+  minlength : 18
+}
 
 const userName = { // 用户名验证规则
   required: true,
@@ -49,11 +54,6 @@ const businessLicense = { // 营业执照
   maxlength: 30
 }
 
-const settlement = { // 结算帐号
-  minlength: 12,
-  maxlength: 30
-}
-
 const remark = { // 备注
   maxlength: 400
 }
@@ -76,17 +76,25 @@ const servicePhone = {
   maxlength: 20
 }
 
-const password = {
+const pwd = {
   required  : true,
   pwd       : true,
   minlength : 6,
   maxlength : 20
 }
 
+const confirmPwd = {
+    required  : true,
+    pwd       : true,
+    minlength : 6,
+    maxlength : 20,
+    equalTo: "#pwd"
+}
+
 const identifyCode = {
   required  : true,
   user      : true,
-  maxlength : 6
+  minlength : 6
 }
 
 const role = {
@@ -136,18 +144,19 @@ export {
   contacts,
   mobile,
   businessLicense,
-  settlement,
   remark,
   role,
   address,
   realName,
   servicePhone,
-  password,
+  pwd,
+  confirmPwd,
   code,
   housingTypeName,
   area,
   structure,
   roomNo,
   identifyCode,
-  price
+  price,
+  idCard
 }

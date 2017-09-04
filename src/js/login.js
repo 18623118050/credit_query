@@ -2,7 +2,7 @@ import './public/index'
 
 import {
   userName        as validate_loginName,
-  password        as validate_pwd,
+  pwd             as validate_pwd,
   identifyCode    as validate_identifyCode
 } from './public/validate'
 
