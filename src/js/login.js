@@ -28,11 +28,19 @@ function vue_mounted_valid () {
     // 提交事件
     submitHandler: () => {
       console.log('submit!')
-      window.location.href = './creditWithout.html'
-      /*      let loading_modal = layer.msg('提交中...', {
-       icon: 16,
-       time: 0
-       })*/
+
+      let $loadingToast = $('#loadingToast');
+
+
+        if ($loadingToast.css('display') != 'none') return;
+
+        $loadingToast.fadeIn(100);
+        setTimeout(function () {
+          $loadingToast.fadeOut(100);
+          window.location.href = './creditWithout.html'
+
+        }, 2000);
+
 
       /*     $.ajax({
        url: base + addCustomer,

@@ -2,7 +2,7 @@ import './public/toastr';
 
 $(function () {
   setTimeout(() => {
-    window.location.href = "./index.html"
+    window.location.href = "./creditGet.html"
   },2000)
 })
 

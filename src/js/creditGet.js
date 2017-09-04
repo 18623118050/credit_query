@@ -2,7 +2,7 @@ import './public/toastr';
 
 $(function () {
 
-  $('#getCredit').on('click', function (e) {
+  $('#getCredit').on('click', (e) => {
     e.preventDefault();
 
     $(this).hide()
@@ -11,7 +11,7 @@ $(function () {
 
     setTimeout(() => {
 
-      window.location.href = './submitSucc.html'
+      window.location.href = './creditReport.html'
     }, 1000)
   })
 })
