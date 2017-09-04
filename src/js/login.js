@@ -87,6 +87,7 @@ function vue_mounted_valid () {
 
 }
 
+// 弹窗
 function findPwd() {
   let $getPwd       = $('#getPwd'),
       $getPwdDialog = $('#getPwdDialog'),
@@ -105,6 +106,25 @@ function findPwd() {
   })
 }
 
+// 解决移动端绝对定位的问题
+function footer() {
+  let h = $(window).height();
+
+  $(window).resize(function() {
+
+    if($(window).height() < h){
+      $('.footer_bar').hide();
+    }
+    if($(window).height() >= h){
+      $('.footer_bar').show();
+    }
+  });
+}
+
 findPwd();
+footer();
+
+
+
 
 
