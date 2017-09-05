@@ -63,6 +63,7 @@ gulp.task('jsVendor', () => {
           './src/js/vendor/messages_zh.min.js',
           './src/js/vendor/toastr.min.js',
           './src/js/vendor/active.js',
+          './src/js/vendor/layer.js',
         ])
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('./dist/js/'))
@@ -77,7 +78,8 @@ gulp.task('css', () => {
           './src/css/weui.min.css',
           './src/css/magic-check.min.css',
           './src/css/toastr.min.css',
-          './src/css/iconfont.css'
+          './src/css/iconfont.css',
+          './src/css/layer.css'
         ])
         .pipe(concat('vendor.css'))
         .pipe(gulp.dest('./dist/css/'))
