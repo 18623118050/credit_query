@@ -37,11 +37,11 @@ function vue_mounted_valid () {
 
         $loadingToast.fadeIn(100);
         setTimeout(function () {
+
           $loadingToast.fadeOut(100);
           window.location.href = './creditWithout.html'
 
         }, 2000);
-
 
       /*     $.ajax({
        url: base + addCustomer,
