@@ -19,6 +19,7 @@ let app = new Vue({
     vue_mounted_valid()
   }
 })
+
 function vue_mounted_valid () {
   let form_valid,
     form = $('#login-form')
