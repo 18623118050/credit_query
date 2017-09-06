@@ -12,7 +12,8 @@ let app = new Vue({
     return {
       loginName: '',
       pwd: '',
-      identifyCode: ''
+      identifyCode: '',
+      img: '../img/credit_ok.png'
     }
   },
   mounted: () => { // 生命周期
