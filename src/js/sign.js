@@ -88,9 +88,28 @@ function vue_mounted_valid() {
   })
 
 }
+function protocol() {//服务协议弹窗
+  let myScroll;
 
-function protocol() {
-  $('#protocol').on('click', (e) => {
+  function isPassive() {
+    let supportsPassiveOption = false;
+    try {
+      addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () {
+          supportsPassiveOption = true;
+        }
+      }));
+    } catch(e) {}
+    return supportsPassiveOption;
+  }
+
+  //取消body默认行为：下拉、滑动
+  document.addEventListener('touchmove',  (e)=> { e.preventDefault(); }, isPassive() ? {
+    capture: false,
+    passive: false
+  } : false);
+
+  $('#protocol').on('click', (e) => {//触发点击事件
     e.preventDefault();
 
     let html = `<div class="protocol">
@@ -158,12 +177,17 @@ function protocol() {
                       </div>
                     </div>
                 </div>`;
+
       layer.open({
         title: '服务协议',
         type: 1,
         area: ['90%', '90%'], //宽高
         content: html
       });
+
+      setTimeout(() => {
+        myScroll = new IScroll('.layui-layer-content');
+      },0)
   })
 }
 protocol()

@@ -63,6 +63,7 @@ gulp.task('jsVendor', () => {
           './src/js/vendor/messages_zh.min.js',
           './src/js/vendor/toastr.min.js',
           './src/js/vendor/active.js',
+          './src/js/vendor/iscroll-lite.js',
           './src/js/vendor/layer.js',
         ])
         .pipe(concat('vendor.js'))

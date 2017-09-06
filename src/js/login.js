@@ -17,6 +17,23 @@ let app = new Vue({
   },
   mounted: () => { // 生命周期
     vue_mounted_valid()
+  },
+  methods: {
+    getImg: function () {
+      $.ajax({
+        type: 'GET',
+        url: ''
+      })
+        .done(function (res) {
+
+        })
+        .fail(function (res) {
+
+        })
+        .always(function (res) {
+
+        })
+    }
   }
 })
 
