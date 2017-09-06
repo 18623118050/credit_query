@@ -121,12 +121,9 @@ button.toast-close-button {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  background-position: 15px center;
+  background-position: 15px 15px;
   background-repeat: no-repeat;
   color: #FFF;
-  opacity: .8;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  filter: alpha(opacity=80)
 }
 
 #toast-container > div.rtl {

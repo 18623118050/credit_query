@@ -39,15 +39,15 @@ let app = new Vue({
 
 function vue_mounted_valid () {
   let form_valid,
-    form = $('#login-form')
+      form = $('#login-form')
 
   $.validator.setDefaults({ // 只能放在validate规则配置之前
 
     // 提交事件
     submitHandler: () => {
       console.log('submit!')
-
-      let $loadingToast = $('#loadingToast');
+      toastr.error('dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+  /*    let $loadingToast = $('#loadingToast');
 
 
         if ($loadingToast.css('display') != 'none') return;
@@ -58,7 +58,7 @@ function vue_mounted_valid () {
           $loadingToast.fadeOut(100);
           window.location.href = './creditWithout.html'
 
-        }, 2000);
+        }, 2000);*/
 
       /*     $.ajax({
        url: base + addCustomer,
