@@ -16,23 +16,27 @@ let app = new Vue({
       img: '../img/credit_ok.png'
     }
   },
-  mounted: () => { // 生命周期
+  mounted: function() { // 生命周期
     vue_mounted_valid()
+    this.getImg()
   },
   methods: {
     getImg: function () {
       $.ajax({
-        type: 'GET',
-        url: ''
+        type: 'POST',
+        url: '10.0.10.204:8085/credit/getValidationCode.html',
+        data:{fromY:"yang",step:"2login"},
+
       })
         .done(function (res) {
 
+          console.log(res)
         })
         .fail(function (res) {
-
+          console.log(res)
         })
         .always(function (res) {
-
+          console.log(res)
         })
     }
   }
