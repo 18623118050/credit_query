@@ -17,10 +17,21 @@
       }
     }
     .tree_item_txt {
+      text-align: left;
       display: inline-block;
       font-size: 12px;
       color: @color-black;
       min-width: 72px;
+    }
+  }
+}
+
+@media only screen and(max-width: 321px){
+  .tree{
+    .tree_item{
+      .tree_item_txt{
+        text-align: center;
+      }
     }
   }
 }

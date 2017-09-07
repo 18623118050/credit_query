@@ -13,7 +13,7 @@ let app = new Vue({
       loginName: '',
       pwd: '',
       identifyCode: '',
-      img: '../img/credit_ok.png'
+      img: '../img/yzm.png'
     }
   },
   mounted: function() { // 生命周期
@@ -21,7 +21,7 @@ let app = new Vue({
     this.getImg()
   },
   methods: {
-    getImg: function () {
+    getImg: function() {
       $.ajax({
         type: 'POST',
         url: '10.0.10.204:8085/credit/getValidationCode.html',
@@ -29,7 +29,6 @@ let app = new Vue({
 
       })
         .done(function (res) {
-
           console.log(res)
         })
         .fail(function (res) {
@@ -51,8 +50,10 @@ function vue_mounted_valid () {
     // 提交事件
     submitHandler: () => {
       console.log('submit!')
+/*
       toastr.error('dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-  /*    let $loadingToast = $('#loadingToast');
+*/
+      let $loadingToast = $('#loadingToast');
 
 
         if ($loadingToast.css('display') != 'none') return;
@@ -63,7 +64,7 @@ function vue_mounted_valid () {
           $loadingToast.fadeOut(100);
           window.location.href = './creditWithout.html'
 
-        }, 2000);*/
+        }, 2000);
 
       /*     $.ajax({
        url: base + addCustomer,
