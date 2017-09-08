@@ -11,7 +11,7 @@ $(function () {
 
     setTimeout(() => {
 
-      window.location.href = './creditReport.html'
+      window.location.href = './identifyTest.html'
     }, 1000)
   })
 })
