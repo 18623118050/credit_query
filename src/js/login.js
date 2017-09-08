@@ -56,7 +56,7 @@ function vue_mounted_valid () {
     submitHandler: () => {
       console.log('submit!')
 /*
-      toastr.error('dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+      toastr.error('你咋的了')
 */
       let $loadingToast = $('#loadingToast');
 
