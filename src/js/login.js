@@ -28,9 +28,8 @@ let app = new Vue({
       console.log('当前时间戳：'+timeStamp);
 
       $.ajax({
-        type: 'POST',
         url: base,
-        data:{fromY:"yang",step:"2login"},
+        data:{code:"0",step:"2login"},
 
       })
         .done(function (res) {
