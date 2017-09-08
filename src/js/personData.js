@@ -1,5 +1,5 @@
 import './public/index'
-
+import url from './date/url'
 import {
   userName        as validate_loginName,
   pwd             as validate_pwd,
@@ -8,6 +8,7 @@ import {
   identifyCode    as validate_identifyCode
 } from './public/validate'
 
+const base = url.base;
 
 let app = new Vue({
   el: '#sign-form',

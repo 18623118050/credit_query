@@ -1,10 +1,12 @@
 import './public/index'
-
+import url from './date/url'
 import {
   realName        as validate_realName,
   idCard          as validate_idCard,
   identifyCode    as validate_identifyCode
 } from './public/validate'
+
+const  base = url.base
 
 
 let app = new Vue({

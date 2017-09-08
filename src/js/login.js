@@ -1,17 +1,19 @@
 import './public/index'
-
+import url from './date/url'
 import {
   userName        as validate_loginName,
-  pwd             as validate_pwd,
+  pwd             as validate_password,
   identifyCode    as validate_identifyCode
 } from './public/validate'
+
+const  base = url.base
 
 let app = new Vue({
   el: '#login-form',
   data: () => { // 设置成函数才可以调用$options.data()方法来清空数据
     return {
       loginName: '',
-      pwd: '',
+      password: '',
       identifyCode: '',
       img: '../img/yzm.png'
     }
@@ -22,9 +24,12 @@ let app = new Vue({
   },
   methods: {
     getImg: function() {
+      let timeStamp = new Date().getTime();
+      console.log('当前时间戳：'+timeStamp);
+
       $.ajax({
         type: 'POST',
-        url: '10.0.10.204:8085/credit/getValidationCode.html',
+        url: base,
         data:{fromY:"yang",step:"2login"},
 
       })
@@ -112,7 +117,7 @@ function vue_mounted_valid () {
   form_valid = form.validate({
     rules: {
       loginName: validate_loginName,
-      pwd: validate_pwd,
+      password: validate_password,
       identifyCode: validate_identifyCode
     }
   })
@@ -120,20 +125,21 @@ function vue_mounted_valid () {
 }
 
 // 弹窗
-function findPwd() {
+function findpassword() {
   let $getPwd       = $('#getPwd'),
       $getPwdDialog = $('#getPwdDialog'),
       $dialogBtn    = $('.weui-dialog__btn')
 
   $getPwd.on('click',(e) => {
     e.preventDefault();
+
     $getPwdDialog.fadeIn(200)
   })
 
   $dialogBtn.on('click',(e) => {
     e.preventDefault();
+
     let $el = $(e.target)
-    
     $el.parents('.js_dialog').fadeOut(200)
   })
 }
@@ -146,14 +152,13 @@ function footer() {
 
     if($(window).height() < h){
       $('.footer_bar').hide();
-    }
-    if($(window).height() >= h){
+    }else{
       $('.footer_bar').show();
     }
   });
 }
 
-findPwd();
+findpassword();
 footer();
 
 
