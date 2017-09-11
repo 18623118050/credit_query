@@ -25,15 +25,21 @@ let app = new Vue({
   methods: {
     getImg: function() {
       let timeStamp = new Date().getTime();
-      console.log('当前时间戳：'+timeStamp);
 
+      console.log('当前时间戳：' + timeStamp);
       $.ajax({
         url: base,
-        data:{code:"0",step:"2login"},
+        data:{code: "0",step: "2login"},
 
       })
         .done(function (res) {
-          console.log(res)
+          res = JSON.parse(res)
+
+          if(res.code == 0){
+            console.log('成功获取图片')
+          }else {
+            toastr.error(res.message)
+          }
         })
         .fail(function (res) {
           console.log(res)
@@ -51,23 +57,17 @@ function vue_mounted_valid () {
 
   $.validator.setDefaults({ // 只能放在validate规则配置之前
 
-    // 提交事件
-    submitHandler: () => {
+    submitHandler: () => {    // 提交事件
       console.log('submit!')
-/*
-      toastr.error('你咋的了')
-*/
+
       let $loadingToast = $('#loadingToast');
 
-
         if ($loadingToast.css('display') != 'none') return;
-
         $loadingToast.fadeIn(100);
-        setTimeout(function () {
 
+        setTimeout(function () {
           $loadingToast.fadeOut(100);
           window.location.href = './creditWithout.html'
-
         }, 2000);
 
       /*     $.ajax({
@@ -124,7 +124,7 @@ function vue_mounted_valid () {
 }
 
 // 弹窗
-function findpassword() {
+function findPassword() {
   let $getPwd       = $('#getPwd'),
       $getPwdDialog = $('#getPwdDialog'),
       $dialogBtn    = $('.weui-dialog__btn')
@@ -157,7 +157,7 @@ function footer() {
   });
 }
 
-findpassword();
+findPassword();
 footer();
 
 
