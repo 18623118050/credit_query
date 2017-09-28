@@ -112,8 +112,8 @@ function vue_mounted_valid () {
     }
   })
 
-  // 验证
-  form_valid = form.validate({
+
+  form_valid = form.validate({ // 验证
     rules: {
       loginName: validate_loginName,
       password: validate_password,
@@ -123,8 +123,7 @@ function vue_mounted_valid () {
 
 }
 
-// 弹窗
-function findPassword() {
+function findPassword() { // 弹窗
   let $getPwd       = $('#getPwd'),
       $getPwdDialog = $('#getPwdDialog'),
       $dialogBtn    = $('.weui-dialog__btn')
@@ -143,8 +142,7 @@ function findPassword() {
   })
 }
 
-// 解决移动端绝对定位的问题
-function footer() {
+function footer() { // 解决移动端绝对定位的问题
   let h = $(window).height();
 
   $(window).resize(function() {
